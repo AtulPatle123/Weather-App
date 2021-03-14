@@ -1,13 +1,144 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding:0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  background:#f3f2ef;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap: wrap;
+  height:100vh;
+  width:100vw; 
+  font-family: 'Jost', sans-serif;
+}
+
+html{
+  font-size:100%;
+  height:100%;
+}
+
+html {
+  background: #eee;
+}
+
+.box {
+  width: 22vw;
+  height: 35vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 3rem rgba(0, 0, 0,0.2);
+  background:#a5bbdd;
+  position: relative;
+  overflow: hidden;
+  transform:translate3d(0,0,0);
+  min-width: 20rem;
+  min-height: 35rem;
+}
+
+.wave{
+  opacity: 0.3;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  background:white;
+  width:50rem;
+  height:50rem;
+  margin-left:-25rem;
+  margin-top: -20rem;
+  transform-origin: 50% 48%;
+  border-radius:43%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave .three{
+  animation: drift 5000ms infinite linear;
+  z-index: 2 !important;
+  opacity: 0.1;
+}
+
+.wave .two{
+  animation: drift 7000ms infinite linear;
+  z-index: 2 !important;
+  opacity: 0.1;
+}
+
+.box::after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width:100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+
+.inputData{
+  display: flex;
+  justify-content: center;
+  margin-top:25px;
+}
+
+input {
+  padding:15px 25px;
+  border: 2px solid #a5bbdd;
+  border-radius:20px;
+  outline:none;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type="search"]::placeholder {
+  text-align: center;
+}
+
+.info{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30%;
+}
+
+.location{
+  font-size: 40px;
+}
+
+.tempmin_max{
+  margin-top:10px;
+}
+
+#nodata{
+  text-align:center;
+  font-size: 25px;
+  font-weight:bold;
+  margin-top: 20px;
+  color: white;
+}
+
+#nodata1{
+  text-align:center;
+  font-size: 25px;
+  font-weight:bold;
+  margin-top: 20px;
+  color: black;
+  background-color:white;
+  padding: 5px 10px;
+  box-shadow: rgba(8, 8, 8, 0.2) 0px 2px 8px 0px;
 }
